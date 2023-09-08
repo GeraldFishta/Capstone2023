@@ -33,6 +33,7 @@ import { CateringComponent } from './components/catering/catering.component';
     CateringComponent,
 
 
+
   ],
   imports: [
     BrowserModule,
