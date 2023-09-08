@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { CateringComponent } from './components/catering/catering.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 
 
@@ -31,6 +32,7 @@ import { CateringComponent } from './components/catering/catering.component';
     HomeComponent,
     AboutComponent,
     CateringComponent,
+    ContactUsComponent,
 
 
 
