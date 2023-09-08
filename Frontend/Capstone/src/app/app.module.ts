@@ -14,6 +14,9 @@ import { ReservationComponent } from './pages/reservation/reservation.component'
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
+import { CateringComponent } from './components/catering/catering.component';
+
+
 
 
 @NgModule({
@@ -27,6 +30,8 @@ import { AboutComponent } from './components/about/about.component';
     ReservationComponent,
     HomeComponent,
     AboutComponent,
+    CateringComponent,
+
 
   ],
   imports: [
