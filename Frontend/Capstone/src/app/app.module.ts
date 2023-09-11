@@ -16,6 +16,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { CateringComponent } from './components/catering/catering.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
@@ -33,6 +35,8 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     AboutComponent,
     CateringComponent,
     ContactUsComponent,
+    LoginComponent,
+    RegisterComponent,
 
 
 
