@@ -18,6 +18,7 @@ import { CateringComponent } from './components/catering/catering.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { BrigadeComponent } from './components/brigade/brigade.component';
 
 
 
@@ -37,6 +38,7 @@ import { RegisterComponent } from './components/register/register.component';
     ContactUsComponent,
     LoginComponent,
     RegisterComponent,
+    BrigadeComponent,
 
 
 
