@@ -1,5 +1,6 @@
-section {
-  padding: 140px 0;
+.register {
+  background-color: #0c0b09;
+  padding: 160px 0;
   overflow: hidden;
   text-align: center;
 }
@@ -146,4 +147,11 @@ button#book-table.book-table {
 
 .book-a-table .php-email-form button[type=submit]:hover {
   background: #d3af71;
+}
+
+.tutto {
+  background: url("../../../assets/imgs/desk-notebook-table-book-pencil-black-and-white-801007-pxhere.com.jpg") top center;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
 }
