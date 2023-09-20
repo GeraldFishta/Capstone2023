@@ -10,7 +10,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormComponent } from './components/form/form.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
-import { ReservationComponent } from './pages/reservation/reservation.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
@@ -32,7 +31,6 @@ import { TastingmenuComponent } from './components/tastingmenu/tastingmenu.compo
     FooterComponent,
     FormComponent,
     HomepageComponent,
-    ReservationComponent,
     HomeComponent,
     AboutComponent,
     CateringComponent,
