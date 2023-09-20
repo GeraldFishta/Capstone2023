@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.epicode.Spring.models.Reservation;
 import com.epicode.Spring.repositories.ReservationRepository;
-import com.epicode.Spring.repositories.TableRepository;
+
 
 
 @Service
 public class ReservationService {
 	
 	@Autowired ReservationRepository reservationRepo;
-	@Autowired TableRepository tableRepo;
+
 	public ReservationRepository getReservationRepo() {
 		return reservationRepo;
 	}
