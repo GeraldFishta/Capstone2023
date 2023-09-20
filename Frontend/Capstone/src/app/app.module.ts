@@ -19,6 +19,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BrigadeComponent } from './components/brigade/brigade.component';
 import { TastingmenuComponent } from './components/tastingmenu/tastingmenu.component';
+import { ReservationComponent } from './components/reservation/reservation.component';
 
 
 
@@ -39,6 +40,7 @@ import { TastingmenuComponent } from './components/tastingmenu/tastingmenu.compo
     RegisterComponent,
     BrigadeComponent,
     TastingmenuComponent,
+    ReservationComponent,
 
 
 
