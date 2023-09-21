@@ -1,7 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
 
-/* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+body {
+margin: 0;
+font-family: var(--bs-body-font-family);
+font-size: var(--bs-body-font-size);
+font-weight: var(--bs-body-font-weight);
+line-height: var(--bs-body-line-height);
+color: #ffffff;
+text-align: var(--bs-body-text-align);
+background-color: #000000;
+-webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
 section {
   padding: 60px 0;
