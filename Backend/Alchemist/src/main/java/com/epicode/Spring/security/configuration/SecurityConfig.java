@@ -18,6 +18,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.epicode.Spring.security.security.JwtAuthenticationEntryPoint;
 import com.epicode.Spring.security.security.JwtAuthenticationFilter;
@@ -25,6 +26,7 @@ import com.epicode.Spring.security.security.JwtAuthenticationFilter;
 
 @Configuration
 @EnableMethodSecurity
+@CrossOrigin( origins = "*")
 public class SecurityConfig {
 
     private UserDetailsService userDetailsService;
