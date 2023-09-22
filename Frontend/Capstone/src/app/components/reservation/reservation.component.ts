@@ -32,10 +32,21 @@ export class ReservationComponent implements OnInit {
 
   onSubmit(): void {
 
-    this.svc.book(this.form.value).subscribe((value:any) => {console.log(value);
+    const authToken = localStorage.getItem('accessToken');
 
-    })
+
+    if (authToken == null) {
+
+      console.error('Il Token JWT non presente in localStorage.');
+      return;
+    }
+
+    this.svc.book(this.form.value, authToken).subscribe((value: any) => {
+      console.log(value);
+    });
+
+    }
 
   }
 
-}
+

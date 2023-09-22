@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RegisterData } from '../interfaces/register-data';
 import { LoginData } from '../interfaces/login-data';
@@ -27,10 +27,14 @@ export class AuthService {
 
   }
 
-  public book( reservationData : ReservationData){
+  public book(reservationData: ReservationData, authToken: string) {
 
-    return this.http.post(this.url + 'reservation', reservationData)
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${authToken}`);
+    const options = { headers: headers };
 
+    return this.http.post(this.url + 'reservation/reservation', reservationData, options);
   }
-
 }
+
+
+
