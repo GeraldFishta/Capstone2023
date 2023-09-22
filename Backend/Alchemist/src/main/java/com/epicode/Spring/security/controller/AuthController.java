@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.epicode.Spring.security.entity.User;
 import com.epicode.Spring.security.payload.JWTAuthResponse;
 import com.epicode.Spring.security.payload.LoginDto;
 import com.epicode.Spring.security.payload.RegisterDto;
+import com.epicode.Spring.security.repository.UserRepository;
 import com.epicode.Spring.security.service.AuthService;
 
 
@@ -21,10 +23,12 @@ import com.epicode.Spring.security.service.AuthService;
 @CrossOrigin( origins = "*")
 public class AuthController {
 
+	private UserRepository userRepo;
     private AuthService authService;
 
-    public AuthController(AuthService authService) {
-        this.authService = authService;
+    public AuthController(UserRepository userRepo,AuthService authService) {
+    	this.userRepo = userRepo;
+    	this.authService = authService;
     }
 
     // Build Login REST API
@@ -32,10 +36,13 @@ public class AuthController {
     public ResponseEntity<JWTAuthResponse> login(@RequestBody LoginDto loginDto){
            	
     	String token = authService.login(loginDto);
-
+    	
         JWTAuthResponse jwtAuthResponse = new JWTAuthResponse();
         jwtAuthResponse.setUsername(loginDto.getUsername());
         jwtAuthResponse.setAccessToken(token);
+        User user = userRepo.findByUsername(jwtAuthResponse.getUsername()).get();
+        jwtAuthResponse.setAdmin(user.checkAdmin());
+        
 
         return ResponseEntity.ok(jwtAuthResponse);
     }

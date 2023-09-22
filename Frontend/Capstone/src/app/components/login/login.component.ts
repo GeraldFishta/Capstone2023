@@ -34,6 +34,9 @@ export class LoginComponent {
     this.svc.login(this.form.value).subscribe((value: any) => {
       console.log(value);
       localStorage.setItem('accessToken', value.accessToken);
+      localStorage.setItem('isLogged', 'true');
+      localStorage.setItem('username', value.username);
+      localStorage.setItem('isAdmin', value.isAdmin);
       this.router.navigate(['/reservation']);
 
     })

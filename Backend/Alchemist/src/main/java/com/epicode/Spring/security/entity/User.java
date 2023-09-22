@@ -38,4 +38,13 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )
     private Set<Role> roles = new HashSet<>();
+    
+    public boolean checkAdmin() {
+    	for (Role role: roles) {
+    		if(role.getRoleName() == ERole.ROLE_ADMIN) {
+    			return true;
+    		} 
+    	} return false;
+    }
+    
 }
