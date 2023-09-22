@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth-service.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class LoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    private svc: AuthService
+    private svc: AuthService,
+    private router: Router
   ) { }
 
 
@@ -32,6 +34,7 @@ export class LoginComponent {
     this.svc.login(this.form.value).subscribe((value: any) => {
       console.log(value);
       localStorage.setItem('accessToken', value.accessToken);
+      this.router.navigate(['/reservation']);
 
     })
 

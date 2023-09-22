@@ -20,6 +20,7 @@ import { BrigadeComponent } from './components/brigade/brigade.component';
 import { TastingmenuComponent } from './components/tastingmenu/tastingmenu.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { AuthService } from './services/auth-service.service';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -51,6 +52,7 @@ import { AuthService } from './services/auth-service.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule,
 
   ],
   providers: [],

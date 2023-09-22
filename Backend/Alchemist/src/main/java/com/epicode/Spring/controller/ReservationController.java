@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -47,4 +48,24 @@ public class ReservationController {
 	public ResponseEntity<Reservation> deleteReservation ( @PathVariable String name ) {
 		return new ResponseEntity<Reservation>(reservationSvc.deleteReservation(name),HttpStatus.OK);
 	}
+	
+	@PutMapping("/reservation/{id}")
+	public ResponseEntity<Reservation> updateReservation(@PathVariable String id, @RequestBody Reservation updatedReservation) {
+	    Reservation existingReservation = reservationSvc.GetReservation(id);
+	    
+	    if (existingReservation == null) {
+
+	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	    }
+	    
+
+	    existingReservation.setName(updatedReservation.getName());
+	    existingReservation.setReservationTime(updatedReservation.getReservationTime());
+	    existingReservation.setPeople(updatedReservation.getPeople());
+
+	    Reservation updated = reservationSvc.setReservation(existingReservation);
+	    
+	    return new ResponseEntity<>(updated, HttpStatus.OK);
+	}
+	
 }
