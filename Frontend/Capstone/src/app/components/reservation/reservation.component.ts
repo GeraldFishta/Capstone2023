@@ -23,7 +23,8 @@ export class ReservationComponent implements OnInit {
 
       name : this.fb.control('', [Validators.required ]),
       reservationTime: this.fb.control('', [Validators.required ]),
-      people: this.fb.control('', [Validators.required ])
+      people: this.fb.control('', [Validators.required ]),
+      allergies: this.fb.control('', [Validators.required])
 
     });
 

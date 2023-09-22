@@ -23,5 +23,7 @@ public class Reservation {
 	private LocalDateTime reservationTime;
 	
 	private Integer people;
+	
+	private String allergies;
 
 }
