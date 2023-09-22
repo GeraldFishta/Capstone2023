@@ -8,7 +8,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FormComponent } from './components/form/form.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
@@ -20,6 +19,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { BrigadeComponent } from './components/brigade/brigade.component';
 import { TastingmenuComponent } from './components/tastingmenu/tastingmenu.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
+import { AuthService } from './services/auth-service.service';
 
 
 
@@ -30,7 +30,6 @@ import { ReservationComponent } from './components/reservation/reservation.compo
     NavbarComponent,
     HeaderComponent,
     FooterComponent,
-    FormComponent,
     HomepageComponent,
     HomeComponent,
     AboutComponent,
@@ -52,6 +51,7 @@ import { ReservationComponent } from './components/reservation/reservation.compo
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

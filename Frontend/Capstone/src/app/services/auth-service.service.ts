@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RegisterData } from '../interfaces/register-data';
 import { LoginData } from '../interfaces/login-data';
+import { ReservationData } from '../interfaces/reservation-data';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,12 @@ export class AuthService {
   public login(loginData : LoginData){
 
     return this.http.post(this.url + 'auth/login', loginData)
+
+  }
+
+  public book( reservationData : ReservationData){
+
+    return this.http.post(this.url + 'reservation', reservationData)
 
   }
 

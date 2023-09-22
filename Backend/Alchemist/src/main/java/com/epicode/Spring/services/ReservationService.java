@@ -10,16 +10,12 @@ import com.epicode.Spring.repositories.ReservationRepository;
 
 
 
+
 @Service
 public class ReservationService {
 	
 	@Autowired ReservationRepository reservationRepo;
 
-	public ReservationRepository getReservationRepo() {
-		return reservationRepo;
-	}
-	
-	
 	
 	public void setReservationRepo(ReservationRepository reservationRepo) {
 		this.reservationRepo = reservationRepo;
@@ -47,7 +43,7 @@ public class ReservationService {
 	}
 	
 	public Reservation setReservation(Reservation r) {
-	
+		
 		return reservationRepo.save(r);
 		
 	}

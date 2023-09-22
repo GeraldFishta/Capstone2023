@@ -37,7 +37,7 @@ public class ReservationController {
 		return new ResponseEntity<Reservation> (reservationSvc.GetReservation(name), HttpStatus.OK);
 	}
 	
-	@PostMapping("/newReservation")
+	@PostMapping("/reservation")
 	public ResponseEntity<Reservation> createReservation( @RequestBody Reservation r ){
 		reservationSvc.setReservation(r);
 		return new ResponseEntity<Reservation>( r, HttpStatus.OK);
