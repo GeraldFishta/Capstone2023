@@ -1,40 +1,58 @@
-<!-- admin.component.html -->
 <app-navbar></app-navbar>
 
-<section id="reservations" class="reservations">
-  <ng-container *ngFor="let reservation of reservations; let i = index">
-    <tr>
-      <td>
-        <span *ngIf="!reservation.editing">{{ reservation.name }}</span>
-        <input *ngIf="reservation.editing" [(ngModel)]="reservation.name" name="name" placeholder="Name">
-      </td>
-      <td>
-        <span *ngIf="!reservation.editing">{{ reservation.reservationTime }}</span>
-        <input *ngIf="reservation.editing" [(ngModel)]="reservation.reservationTime" name="reservationTime" placeholder="Time">
-      </td>
-      <td>
-        <span *ngIf="!reservation.editing">{{ reservation.people }}</span>
-        <input *ngIf="reservation.editing" [(ngModel)]="reservation.people" name="people" placeholder="Pax.">
-      </td>
-      <td>
-        <span *ngIf="!reservation.editing">{{ reservation.allergies }}</span>
-        <input *ngIf="reservation.editing" [(ngModel)]="reservation.allergies" name="allergies" placeholder="Allergies">
-      </td>
-      <td>
-        <button class="btn book-table" id="edit-button" *ngIf="!reservation.editing" (click)="editReservation(reservation)">
-          Edit
-        </button>
-        <button class="btn book-table" id="save-button" *ngIf="reservation.editing" (click)="saveReservation(reservation)">
-          Save
-        </button>
-        <button class="btn book-table" id="cancel-button" *ngIf="reservation.editing" (click)="cancelEdit()">
-          Cancel
-        </button>
-        <button class="btn book-table" id="delete-button" (click)="deleteReservation(reservation.name)">
-          Delete
-        </button>
-      </td>
-    </tr>
-  </ng-container>
+<section id="reservations" class="reservations" data-aos="fade-up">
+  <div class="container">
+    <div class="section-title">
+      <h2>Reservation List</h2>
+      <p>View all reservations here.</p>
+    </div>
 
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Time</th>
+            <th>Pax.</th>
+            <th>Allergies</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reservation of reservations; let i = index">
+            <td>
+              <span *ngIf="!reservation.editing">{{ reservation.name }}</span>
+              <input *ngIf="reservation.editing" [(ngModel)]="reservation.name" name="name" placeholder="Name">
+            </td>
+            <td>
+              <span *ngIf="!reservation.editing">{{ reservation.reservationTime }}</span>
+              <input *ngIf="reservation.editing" [(ngModel)]="reservation.reservationTime" name="reservationTime" placeholder="Time">
+            </td>
+            <td>
+              <span *ngIf="!reservation.editing">{{ reservation.people }}</span>
+              <input *ngIf="reservation.editing" [(ngModel)]="reservation.people" name="people" placeholder="Pax.">
+            </td>
+            <td>
+              <span *ngIf="!reservation.editing">{{ reservation.allergies }}</span>
+              <input *ngIf="reservation.editing" [(ngModel)]="reservation.allergies" name="allergies" placeholder="Allergies">
+            </td>
+            <td>
+              <button class="btn book-table" id="edit-button" *ngIf="!reservation.editing" (click)="editReservation(reservation)">
+                Edit
+              </button>
+              <button class="btn book-table" id="save-button" *ngIf="reservation.editing" (click)="saveReservation(reservation)">
+                Save
+              </button>
+              <button class="btn book-table" id="cancel-button" *ngIf="reservation.editing" (click)="cancelEdit()">
+                Cancel
+              </button>
+              <button class="btn book-table" id="delete-button" (click)="deleteReservation(reservation.name)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </section>
