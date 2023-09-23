@@ -44,9 +44,9 @@ public class ReservationController {
 		return new ResponseEntity<Reservation>( r, HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Reservation> deleteReservation ( @PathVariable String id ) {
-		return new ResponseEntity<Reservation>(reservationSvc.deleteReservation(id),HttpStatus.OK);
+	@DeleteMapping("/{name}")
+	public ResponseEntity<Reservation> deleteReservation ( @PathVariable String name ) {
+		return new ResponseEntity<Reservation>(reservationSvc.deleteReservation(name),HttpStatus.OK);
 	}
 	
 	@PutMapping("/reservation/{id}")

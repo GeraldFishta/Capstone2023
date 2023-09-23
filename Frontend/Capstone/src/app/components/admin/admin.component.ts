@@ -38,14 +38,14 @@ export class AdminComponent implements OnInit{
     }
     }
 
-    deleteReservation(id: string) {
-      if (id === null || id === undefined) {
-        console.error('ID della prenotazione non valido.');
+    deleteReservation(name: string) {
+      console.error(name);
+      if (!name) {
+        console.error('Nome della prenotazione non valido.');
         return;
       }
-
-      this.authService.deleteReservation(id, this.authToken).subscribe(() => {
-        this.reservations = this.reservations.filter(r => r.id !== id);
+      this.authService.deleteReservation(name, this.authToken).subscribe(() => {
+        this.reservations = this.reservations.filter(r => r.name !== name);
       });
     }
 

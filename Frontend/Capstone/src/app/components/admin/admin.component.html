@@ -24,14 +24,14 @@
 
         <tbody>
           <tr *ngFor="let reservation of reservations">
-            <th scope="row">{{ reservation.id }}</th>
+            <th>{{ reservation.name }}</th>
             <td>{{ reservation.name }}</td>
             <td>{{ reservation.reservationTime }}</td>
             <td>{{ reservation.people }}</td>
             <td>{{ reservation.allergies }}</td>
             <td>
               <button class="btn btn-primary" (click)="editReservation(reservation, 'authToken')">Modifica</button>
-              <button class="btn btn-danger" (click)="deleteReservation(reservation.id)">Elimina</button>
+              <button class="btn btn-danger" (click)="deleteReservation(reservation.name)">Elimina</button>
             </td>
           </tr>
         </tbody>
