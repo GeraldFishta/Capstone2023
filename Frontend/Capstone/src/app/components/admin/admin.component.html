@@ -13,7 +13,6 @@
 
         <thead>
           <tr>
-            <th>Id</th>
             <th>Name</th>
             <th>Time</th>
             <th>Pax.</th>
@@ -24,7 +23,6 @@
 
         <tbody>
           <tr *ngFor="let reservation of reservations">
-            <th>{{ reservation.name }}</th>
             <td>{{ reservation.name }}</td>
             <td>{{ reservation.reservationTime }}</td>
             <td>{{ reservation.people }}</td>
