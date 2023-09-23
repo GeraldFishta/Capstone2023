@@ -28,8 +28,8 @@
             <td>{{ reservation.people }}</td>
             <td>{{ reservation.allergies }}</td>
             <td>
-              <button class="btn btn-primary" (click)="editReservation(reservation, 'authToken')">Modifica</button>
-              <button class="btn btn-danger" (click)="deleteReservation(reservation.name)">Elimina</button>
+              <button class="btn book-table" id="book-table" (click)="editReservation(reservation, 'authToken')" >Modifica</button>
+              <button class="btn book-table" id="book-table" (click)="deleteReservation(reservation.name)">Elimina</button>
             </td>
           </tr>
         </tbody>
