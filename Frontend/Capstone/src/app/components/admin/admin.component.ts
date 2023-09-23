@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ReservationData } from 'src/app/interfaces/reservation-data';
 import { AuthService } from 'src/app/services/auth-service.service';
 
 @Component({
@@ -33,21 +34,23 @@ export class AdminComponent implements OnInit {
     this.authService.deleteReservation(name, this.authToken).subscribe(() => {
       this.reservations = this.reservations.filter(r => r.name !== name);
     });
+
+
   }
 
   saveReservation(reservation: any) {
-    const encodedName = encodeURIComponent(reservation.name);
-    this.authService.updateReservation(encodedName, this.editingReservation, this.authToken).subscribe((updatedReservation: any) => {
+    // Passa "reservation" come corpo della richiesta
+    this.authService.updateReservation(reservation.name, reservation, this.authToken).subscribe((updatedReservation: any) => {
       // Aggiorna la prenotazione nell'elenco delle prenotazioni
-      const index = this.reservations.findIndex(r => r.name === reservation.name); // Usare "reservation.name"
+      const index = this.reservations.findIndex(r => r.name === reservation.name);
       if (index !== -1) {
         this.reservations[index] = updatedReservation;
       }
       // Esci dalla modalità di modifica
       this.editingReservation = null;
     });
-
   }
+
 
   editReservation(reservation: any) {
     // Esci dalla modalità di modifica per tutte le altre prenotazioni
@@ -58,6 +61,7 @@ export class AdminComponent implements OnInit {
 
     // Copia la prenotazione in modo che le modifiche siano isolate
     this.editingReservation = { ...reservation };
+
   }
 
   // saveReservation(reservation: any) {

@@ -43,7 +43,6 @@ public class AuthController {
         User user = userRepo.findByUsername(jwtAuthResponse.getUsername()).get();
         jwtAuthResponse.setAdmin(user.checkAdmin());
         
-
         return ResponseEntity.ok(jwtAuthResponse);
     }
 

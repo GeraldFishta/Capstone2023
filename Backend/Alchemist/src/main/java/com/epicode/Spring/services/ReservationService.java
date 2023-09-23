@@ -23,29 +23,22 @@ public class ReservationService {
 		this.reservationRepo = reservationRepo;
 	}
 	
-	public Reservation GetReservation (String id) {
-		
-		Reservation r = reservationRepo.findById(id).get();
-		
+	public Reservation GetReservation (String id) {	
+		Reservation r = reservationRepo.findById(id).get();	
 		return r;
 	}
 	
-	public List<Reservation> GetAllReservations() {
-		
-		return (List<Reservation>) reservationRepo.findAll();
-		
+	public List<Reservation> GetAllReservations() {	
+		return (List<Reservation>) reservationRepo.findAll();	
 	}
 	
-	public Reservation deleteReservation(String id) {
-		
+	public Reservation deleteReservation(String id) {		
 		Reservation r = reservationRepo.findById(id).get();
 		reservationRepo.delete(r);
-		return r;
-		
+		return r;	
 	}
 	
-	public Reservation setReservation(Reservation r) {
-		
+	public Reservation setReservation(Reservation r) {	
 		return reservationRepo.save(r);
 		
 	}
