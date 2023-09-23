@@ -41,11 +41,18 @@ export class AuthService {
     return this.http.delete(`${this.url}reservation/${id}`, options);
   }
 
-  public updateReservation(id: number, reservationData: ReservationData, authToken: string) {
+  // public updateReservation(id: string, reservationData: ReservationData, authToken: string) {
+  //   const headers = new HttpHeaders().set('Authorization', `Bearer ${authToken}`);
+  //   const options = { headers: headers };
+  //   return this.http.put(`${this.url}reservation/${id}`, reservationData, options);
+  // }
+
+  public updateReservation(id: string, reservationData: ReservationData, authToken: string) {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${authToken}`);
     const options = { headers: headers };
     return this.http.put(`${this.url}reservation/${id}`, reservationData, options);
   }
+
 
   getAuthToken(): string {
     const authToken = localStorage.getItem('accessToken');

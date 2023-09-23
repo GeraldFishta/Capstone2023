@@ -49,9 +49,9 @@ public class ReservationController {
 		return new ResponseEntity<Reservation>(reservationSvc.deleteReservation(name),HttpStatus.OK);
 	}
 	
-	@PutMapping("/reservation/{id}")
-	public ResponseEntity<Reservation> updateReservation(@PathVariable String id, @RequestBody Reservation updatedReservation) {
-	    Reservation existingReservation = reservationSvc.GetReservation(id);
+	@PutMapping("/reservation/{name}")
+	public ResponseEntity<Reservation> updateReservation(@PathVariable String name, @RequestBody Reservation updatedReservation) {
+	    Reservation existingReservation = reservationSvc.GetReservation(name);
 	    
 	    if (existingReservation == null) {
 
@@ -62,7 +62,8 @@ public class ReservationController {
 	    existingReservation.setName(updatedReservation.getName());
 	    existingReservation.setReservationTime(updatedReservation.getReservationTime());
 	    existingReservation.setPeople(updatedReservation.getPeople());
-
+	    existingReservation.setAllergies(updatedReservation.getAllergies());
+	    
 	    Reservation updated = reservationSvc.setReservation(existingReservation);
 	    
 	    return new ResponseEntity<>(updated, HttpStatus.OK);

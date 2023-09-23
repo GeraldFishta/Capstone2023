@@ -35,6 +35,20 @@ export class AdminComponent implements OnInit {
     });
   }
 
+  saveReservation(reservation: any) {
+    const encodedName = encodeURIComponent(reservation.name);
+    this.authService.updateReservation(encodedName, this.editingReservation, this.authToken).subscribe((updatedReservation: any) => {
+      // Aggiorna la prenotazione nell'elenco delle prenotazioni
+      const index = this.reservations.findIndex(r => r.name === reservation.name); // Usare "reservation.name"
+      if (index !== -1) {
+        this.reservations[index] = updatedReservation;
+      }
+      // Esci dalla modalità di modifica
+      this.editingReservation = null;
+    });
+
+  }
+
   editReservation(reservation: any) {
     // Esci dalla modalità di modifica per tutte le altre prenotazioni
     this.reservations.forEach(r => (r.editing = false));
@@ -46,18 +60,20 @@ export class AdminComponent implements OnInit {
     this.editingReservation = { ...reservation };
   }
 
-  saveReservation(reservation: any) {
-    // Invia le modifiche al server tramite il tuo servizio AuthService
-    this.authService.updateReservation(reservation.name, this.editingReservation, this.authToken).subscribe((updatedReservation: any) => {
-      // Aggiorna la prenotazione nell'elenco delle prenotazioni
-      const index = this.reservations.findIndex(r => r.name === reservation.name);
-      if (index !== -1) {
-        this.reservations[index] = updatedReservation;
-      }
-      // Esci dalla modalità di modifica
-      this.editingReservation = null;
-    });
-  }
+  // saveReservation(reservation: any) {
+  //   // Invia le modifiche al server tramite il tuo servizio AuthService
+  //   this.authService.updateReservation(reservation.name, this.editingReservation, this.authToken).subscribe((updatedReservation: any) => {
+  //     // Aggiorna la prenotazione nell'elenco delle prenotazioni
+  //     const index = this.reservations.findIndex(r => r.name === reservation.name);
+  //     if (index !== -1) {
+  //       this.reservations[index] = updatedReservation;
+  //     }
+  //     // Esci dalla modalità di modifica
+  //     this.editingReservation = null;
+  //   });
+  // }
+
+
 
   cancelEdit() {
     // Esci dalla modalità di modifica senza salvare le modifiche
