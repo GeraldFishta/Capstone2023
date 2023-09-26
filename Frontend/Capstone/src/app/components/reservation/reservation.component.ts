@@ -44,6 +44,8 @@ export class ReservationComponent implements OnInit {
 
     this.svc.book(this.form.value, authToken).subscribe((value: any) => {
       console.log(value);
+      this.form.reset();
+      alert("Booking confirmed successfully");
     });
 
     }

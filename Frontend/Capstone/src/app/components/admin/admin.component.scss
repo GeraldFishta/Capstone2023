@@ -471,3 +471,8 @@
   position: relative;
   height: 100vh;
 }
+.table > :not(caption) > * > *{
+
+  background-color: #e5e4e4 !important;
+
+}
