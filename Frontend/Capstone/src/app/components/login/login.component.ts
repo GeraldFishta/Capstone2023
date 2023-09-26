@@ -36,8 +36,8 @@ export class LoginComponent {
       localStorage.setItem('accessToken', value.accessToken);
       localStorage.setItem('isLogged', 'true');
       localStorage.setItem('username', value.username);
-    //  localStorage.setItem('isAdmin', value.isAdmin);
-      localStorage.setItem('isAdmin', 'true');
+      localStorage.setItem('isAdmin', value.admin);
+      //localStorage.setItem('isAdmin', 'true');
       this.router.navigate(['/reservation']);
 
     })

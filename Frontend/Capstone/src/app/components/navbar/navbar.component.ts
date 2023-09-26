@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-
+  togglerNavbar = false;
   isLoggedIn = false;
   isAdmin = false;
 
@@ -20,6 +20,16 @@ export class NavbarComponent implements OnInit {
 
     this.isLoggedIn = isLogged === 'true';
     this.isAdmin = isAdmin === 'true';
+  }
+
+  logOut(): void {
+
+    this.isLoggedIn = false;
+    localStorage.removeItem('isLogged');
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('isAdmin');
+    localStorage.removeItem('username');
+
   }
 
 }

@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light order-last order-lg-0">
   <div class="container">
     <!-- Bottone del toggler per schermi ridotti -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="togglerNavbar = !togglerNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <!-- Contenuto della navbar -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="togglerNavbar">
       <ul class="navbar-nav">
         <li class="nav-item" *ngIf="isLoggedIn && isAdmin">
           <a class="nav-link" [routerLink]="['/admin']">Admin</a>
@@ -38,6 +38,7 @@
             <li><a class="dropdown-item" [routerLink]="['/reservation']">Booking</a></li>
           </ul>
         </li>
+        <li class="nav-item" *ngIf="isLoggedIn"><a [routerLink]="['/home']" (click)="logOut()">Logout</a></li>
       </ul>
     </div>
   </div>
