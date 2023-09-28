@@ -107,7 +107,7 @@
 /**
 * Mobile Navigation
 */
-.mobile-nav-toggle {
+.mobile-nav-toggler {
   color: #fff;
   font-size: 28px;
   cursor: pointer;
@@ -117,7 +117,7 @@
 }
 
 @media (max-width: 991px) {
-  .mobile-nav-toggle {
+  .mobile-nav-toggler {
     display: block;
   }
 
@@ -208,4 +208,10 @@
 
 .navbar-mobile .dropdown>.dropdown-active {
   display: block;
+}
+.navbar-toggler {
+  min-height: auto;
+}
+.navbar-mobile {
+  display: none;
 }
